@@ -1,0 +1,42 @@
+@import "../../../scss/add-ons";
+
+:local {
+  .hero {
+    background: $blue-1;
+    height: 100vh;
+    position: relative;
+    width: 100%;
+  }
+
+  .heroContent {
+    @include centre('both');
+    text-align: center;
+    width: 100%;
+  }
+
+  .heroTitleDivider {
+    margin: 0 auto 5px;
+    position: relative;
+    width: 160px;
+
+    &::before,
+    &::after {
+      @include centre("vertical");
+      content: "";
+      border-top: 1px solid $black-1;
+      width: 45px;
+    }
+
+    &::before {
+      left: 5px;
+    }
+
+    &::after {
+      right: 5px;
+    }
+  }
+
+  .heroTitleLower {
+    margin-bottom: 9px;
+  }
+}

@@ -1,0 +1,16 @@
+@mixin centre($position) {
+  @if $position == 'vertical' {
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+  } @else if $position == 'horizontal' {
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+  } @else if $position == 'both' {
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
+}
