@@ -24,4 +24,10 @@
     max-width: 400px;
     width: 60%;
   }
+
+  @media screen and (max-width: 736px) and (orientation: landscape) {
+    .aboutImage {
+      display: none;
+    }
+  }
 }
