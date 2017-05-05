@@ -6,4 +6,22 @@
     width: 100%;
     text-align: center;
   }
+
+  .aboutTitle {
+    margin-bottom: 30px;
+  }
+
+  .aboutP {
+    margin: 0 auto 10px;
+    width: 90%;
+  }
+
+  .aboutImage {
+    border: 10px;
+    border-color: $black-1;
+    border-style: solid;
+    margin-top: 20px;
+    max-width: 400px;
+    width: 60%;
+  }
 }

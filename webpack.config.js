@@ -42,6 +42,12 @@ module.exports = {
         },
       ]
       },
+      {
+        test: /\.(jpg|png|svg)$/,
+        use: [{
+          loader: 'file-loader?name=[name].[ext]'
+        }]
+      }
     ],
   },
   resolve: {
