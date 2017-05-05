@@ -1,0 +1,16 @@
+@import "../../../scss/add-ons";
+
+:local {
+  .scrollDown {
+    @include centre('horizontal');
+    bottom: 20px;
+
+    &::after {
+      @include centre('horizontal');
+      border-left: 1px solid $black-1;
+      bottom: -20px;
+      content: '';
+      height: 15px;
+    }
+  }
+}
