@@ -19,7 +19,6 @@ const Hero = ({ children }) => {
           <h3 className={styles.heroTitleAddress}>45 Chapel Ash</h3>
         </CSSTransitionGroup>
       </div>
-      { children }
     </div>
   );
 };
