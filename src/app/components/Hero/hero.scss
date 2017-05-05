@@ -63,16 +63,12 @@
     }
 
     &.heroTitleAddress {
-      transform: translateY(3px);
-      transition: opacity 1.2s 1.2s ease-out,
-                  transform 1.2s 1.2s ease-out;
-    }
-
-    &.appearActive {
-      opacity: 1;
-      transform: translateY(0);
+      transition: opacity 1.2s 1.4s ease-out;
     }
   }
 
-
+  .appearActive {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
