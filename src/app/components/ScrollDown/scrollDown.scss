@@ -12,5 +12,17 @@
       content: '';
       height: 15px;
     }
+
+    &.appear {
+      opacity: 0.01;
+      transform: translate(-50%, -10px);
+      transition: opacity 1s 1.8s,
+                  transform 1s 1.8s;
+    }
+
+    &.appearActive {
+      opacity: 1;
+      transform: translate(-50%, 0px);
+    }
   }
 }
