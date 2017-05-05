@@ -1,10 +1,9 @@
 import React from 'react';
-import Contact from '../Contact/Contact'
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 import styles from './hero.scss';
 
-const Hero = () => {
+const Hero = ({ children }) => {
   return (
     <div className={styles.hero}>
       <div className={styles.heroContent}>
@@ -20,10 +19,9 @@ const Hero = () => {
           <h3 className={styles.heroTitleAddress}>45 Chapel Ash</h3>
         </CSSTransitionGroup>
       </div>
-      <Contact />
+      { children }
     </div>
   );
 };
-
 
 export default Hero;
