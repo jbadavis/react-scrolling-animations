@@ -4,10 +4,8 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "server": "NODE_ENV=production ./node_modules/babel-cli/bin/babel-node.js --presets react,es2015 src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build:client": "webpack --config webpack.config.js",
-    "build:server": "BABEL_ENV=server babel src/server.js --out-file server.build.js"
+    "server": "webpack-dev-server",
+    "prod": "webpack -p"
   },
   "author": "",
   "license": "ISC",
