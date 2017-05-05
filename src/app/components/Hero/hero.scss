@@ -2,13 +2,10 @@
 
 :local {
   .hero {
-    background: $blue-1;
-    border-style: solid;
-    border-color: $black-1;
-    border-width: 10px;
-    height: calc(100vh - 20px);
+    // background: $blue-1;
+    height: 100vh;
     position: relative;
-    width: calc(100% - 20px);
+    width: 100vw;
   }
 
   .heroContent {
@@ -65,10 +62,10 @@
     &.heroTitleAddress {
       transition: opacity 1.2s 1.4s ease-out;
     }
-  }
 
-  .appearActive {
-    opacity: 1;
-    transform: translateY(0);
+    &.appearActive {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }

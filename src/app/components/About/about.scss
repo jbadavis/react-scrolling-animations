@@ -1,0 +1,9 @@
+@import "../../../scss/add-ons";
+
+:local {
+  .about {
+    @include centre('both');
+    width: 100%;
+    text-align: center;
+  }
+}

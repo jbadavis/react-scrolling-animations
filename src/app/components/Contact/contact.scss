@@ -3,12 +3,19 @@
 :local {
   .contact {
     text-align: center;
-    position: absolute;
-    bottom: 80px;
     width: 100%;
   }
 
-  .contactDetail {
-    width: 100
+  .contactContent {
+    @include centre('both');
+    width: 100%;
+  }
+
+  .contactTitle {
+    margin-bottom: 30px;
+  }
+
+  .contactSubTitle {
+    margin-bottom: 15px;
   }
 }

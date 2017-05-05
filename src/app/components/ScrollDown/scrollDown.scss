@@ -3,7 +3,7 @@
 :local {
   .scrollDown {
     @include centre('horizontal');
-    bottom: 20px;
+    bottom: 30px;
 
     &::after {
       @include centre('horizontal');

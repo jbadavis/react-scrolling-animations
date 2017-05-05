@@ -6,7 +6,7 @@ import ScrollDown from '../../components/ScrollDown/ScrollDown';
 
 const SectionOne = () => {
   return (
-    <Section>
+    <Section background='#91A8D0' border='true'>
       <Hero />
       <ScrollDown />
     </Section>
