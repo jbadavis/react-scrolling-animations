@@ -39,4 +39,37 @@
   .heroTitleLower {
     margin-bottom: 9px;
   }
+
+  .appear {
+    opacity: 0.01;
+
+    &.heroTitleUpper {
+      transform: translateY(10px);
+      transition: opacity 1.2s ease-out,
+                  transform .6s ease-out;
+    }
+
+    &.heroTitleDivider {
+      transition: opacity .6s .6s ease-out;
+    }
+
+    &.heroTitleLower {
+      transform: translateY(3px);
+      transition: opacity 1.2s 1s ease-out,
+                  transform 1.2s 1s ease-out;
+    }
+
+    &.heroTitleAddress {
+      transform: translateY(3px);
+      transition: opacity 1.2s 1.2s ease-out,
+                  transform 1.2s 1.2s ease-out;
+    }
+
+    &.appearActive {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
 }
