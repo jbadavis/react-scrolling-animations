@@ -5,7 +5,7 @@ import Contact from '../../components/Contact/Contact';
 
 const SectionContact = () => {
   return (
-    <Section>
+    <Section border='true'>
       <Contact />
     </Section>
   );
