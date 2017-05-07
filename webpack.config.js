@@ -46,13 +46,16 @@ module.exports = {
       {
         test: /\.(jpg|png|svg)$/,
         use: [{
-          loader: 'file-loader?name=[name].[ext]'
+          loader: 'file-loader?name=/img/[name].[ext]'
         }]
       }
     ],
   },
   plugins: [
-    new CopyWebpackPlugin([{from: 'index.html'}])
+    new CopyWebpackPlugin([
+      {from: 'index.html'},
+      {from: 'img/favicon.ico'}
+    ])
   ],
   resolve: {
     modules: [path.resolve(__dirname, './src'), 'node_modules']
