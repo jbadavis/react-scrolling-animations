@@ -3,14 +3,19 @@
 :local {
   .scrollDown {
     @include centre('horizontal');
-    bottom: 20px;
+    bottom: 80px;
+    
+    transition: opacity .6s ease-out;
 
     &::after {
       @include centre('horizontal');
       border-left: 1px solid $black-1;
-      bottom: -20px;
+      bottom: -80px;
       content: '';
-      height: 15px;
+      height: 65px;
+
+      transition: opacity .6s .6s ease-out,
+                  transform .6s .6s ease-out;
     }
 
     &.appear {
@@ -23,6 +28,29 @@
     &.appearActive {
       opacity: 1;
       transform: translate(-50%, 0px);
+    }
+  }
+
+  .hide {
+    &.scrollDown {
+      opacity: 0;
+
+      transition: opacity .6s .6s ease-out;
+    }
+
+    &.scrollDown::after {
+      opacity: 0;
+      transform: translateY(10px);
+
+      transition: opacity .6s ease-out,
+                  transform .6s ease-out;
+    }
+  }
+
+  @media screen and (min-width: 415px) {
+    .scrollDown {
+      bottom: 20px;
+      height: 15px;
     }
   }
 }

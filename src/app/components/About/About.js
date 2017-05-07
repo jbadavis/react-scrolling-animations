@@ -4,7 +4,6 @@ import styles from './about.scss';
 import url from '../../../images/will-headshot.jpg';
 
 const About = () => {
-
   return (
     <div className={styles.about}>
       <h6 className={styles.aboutTitle}>About</h6>
