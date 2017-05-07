@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 
 import styles from './scrollDown.scss';
 
-export default class ClassName extends React.Component  {
+export default class ScrollDown extends React.Component  {
   constructor(props) {
     super(props);
 

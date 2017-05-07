@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './about.scss';
-import url from '../../../images/will-headshot.jpg';
+import url from '../../../img/will-headshot.jpg';
 
 const About = () => {
   return (

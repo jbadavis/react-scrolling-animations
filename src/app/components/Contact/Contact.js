@@ -1,6 +1,7 @@
 import React from 'react';
 
 import styles from './contact.scss';
+import url from '../../../img/instagram.svg';
 
 const Hero = () => {
   return (
@@ -8,7 +9,15 @@ const Hero = () => {
       <div className={styles.contactContent}>
         <h6 className={styles.contactTitle}>contact</h6>
         <h4 className={styles.contactSubTitle}>phone</h4>
-        <p>01902 424846</p>
+        <a href='tel:+441902424846'>01902 424846</a>
+        <h4 className={styles.contactSubTitle}>address</h4>
+        <p>45 Chapel Ash</p>
+        <p>Wolverhampton</p>
+        <p>WV3 0UF</p>
+        <h4 className={styles.contactSubTitle}>instagram</h4>
+        <a href='https://www.instagram.com/will_the_barber45/' target='_blank'>
+          <img src={url} className={styles.contactSocial}/>
+        </a>
       </div>
     </div>
   );

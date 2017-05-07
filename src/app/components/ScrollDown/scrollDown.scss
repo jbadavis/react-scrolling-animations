@@ -4,7 +4,7 @@
   .scrollDown {
     @include centre('horizontal');
     bottom: 80px;
-    
+
     transition: opacity .6s ease-out;
 
     &::after {
@@ -49,8 +49,12 @@
 
   @media screen and (min-width: 415px) {
     .scrollDown {
-      bottom: 20px;
-      height: 15px;
+      bottom: 30px;
+
+      &::after {
+        bottom: -30px;
+        height: 20px;
+      }
     }
   }
 }
