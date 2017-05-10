@@ -2,6 +2,8 @@ echo "Removing Previous Build\n"
 
 rm -r dist
 
+echo "Done!"
+
 echo "\nRunning Webpack\n"
 
 webpack -p --progress
