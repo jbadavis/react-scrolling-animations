@@ -5,45 +5,29 @@
     @include centre('horizontal');
     bottom: 80px;
 
-    transition: opacity .6s ease-out;
-
+    opacity: 0;
+    transition: opacity 1s 1.8s,
+                transform 1s 1.8s;
     &::after {
       @include centre('horizontal');
       border-left: 1px solid $black-1;
       bottom: -80px;
       content: '';
       height: 65px;
-
-      transition: opacity .6s .6s ease-out,
-                  transform .6s .6s ease-out;
-    }
-
-    &.appear {
-      opacity: 0.01;
-      transform: translate(-50%, -10px);
-      transition: opacity 1s 1.8s,
-                  transform 1s 1.8s;
-    }
-
-    &.appearActive {
-      opacity: 1;
-      transform: translate(-50%, 0px);
-    }
-  }
-
-  .hide {
-    &.scrollDown {
-      opacity: 0;
-
-      transition: opacity .6s .6s ease-out;
-    }
-
-    &.scrollDown::after {
       opacity: 0;
       transform: translateY(10px);
 
-      transition: opacity .6s ease-out,
-                  transform .6s ease-out;
+      transition: opacity .6s 2s ease-out,
+                  transform .6s 2s ease-out;
+    }
+
+    &.show {
+      opacity: 1;
+
+      &::after {
+        opacity: 1;
+        transform: translate(-50%, 0px);
+      }
     }
   }
 

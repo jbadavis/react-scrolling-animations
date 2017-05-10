@@ -7,11 +7,11 @@ const Hero = ({reveal}) => {
 
   return (
     <div className={classNames}>
-      <div className={styles.heroContent}>
-        <h1 className={styles.heroTitleUpper}>Will</h1>
-        <h4 className={styles.heroTitleDivider}>at</h4>
-        <h2 className={styles.heroTitleLower}>GI's</h2>
-        <h3 className={styles.heroTitleAddress}>45 Chapel Ash</h3>
+      <div className={styles.content}>
+        <h1 className={styles.titleUpper}>Will</h1>
+        <h4 className={styles.titleDivider}>at</h4>
+        <h2 className={styles.titleLower}>GI's</h2>
+        <h3 className={styles.titleAddress}>45 Chapel Ash</h3>
       </div>
     </div>
   );

@@ -6,14 +6,14 @@
     width: 100%;
     text-align: center;
 
-    .aboutTitle {
+    .title {
       margin-bottom: 30px;
       opacity: 0;
 
       transition: opacity .6s ease-in;
     }
 
-    .aboutP {
+    .copy {
       margin: 0 auto 10px;
       opacity: 0;
       width: 90%;
@@ -21,7 +21,7 @@
       transition: opacity .6s .2s ease-in;
     }
 
-    .aboutImage {
+    .image {
       border: 10px;
       border-color: $black-1;
       border-style: solid;
@@ -36,9 +36,9 @@
     }
 
     &.show {
-      .aboutTitle,
-      .aboutP,
-      .aboutImage {
+      .title,
+      .copy,
+      .image {
         opacity: 1;
         transform: translateY(0);
       }
@@ -46,7 +46,7 @@
   }
 
   @media screen and (max-width: 736px) and (orientation: landscape) {
-    .aboutImage {
+    .image {
       display: none;
     }
   }

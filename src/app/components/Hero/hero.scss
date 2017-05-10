@@ -6,13 +6,13 @@
     position: relative;
     width: 100%;
 
-    .heroContent {
+    .content {
       @include centre('both');
       text-align: center;
       width: 100%;
     }
 
-    .heroTitleDivider {
+    .titleDivider {
       margin: 0 auto 5px;
       position: relative;
       width: 160px;
@@ -34,42 +34,42 @@
       }
     }
 
-    .heroTitleLower {
+    .titleLower {
       margin-bottom: 9px;
     }
 
-    .heroTitleUpper,
-    .heroTitleDivider,
-    .heroTitleLower,
-    .heroTitleAddress {
+    .titleUpper,
+    .titleDivider,
+    .titleLower,
+    .titleAddress {
       opacity: 0;
     }
 
-    .heroTitleUpper {
+    .titleUpper {
       transform: translateY(10px);
       transition: opacity 1.2s ease-out,
                   transform .6s ease-out;
     }
 
-    .heroTitleDivider {
+    .titleDivider {
       transition: opacity .6s .6s ease-out;
     }
 
-    .heroTitleLower {
+    .titleLower {
       transform: translateY(3px);
       transition: opacity 1.2s 1s ease-out,
                   transform 1.2s 1s ease-out;
     }
 
-    .heroTitleAddress {
+    .titleAddress {
       transition: opacity 1.2s 1.4s ease-out;
     }
 
     &.show {
-      .heroTitleUpper,
-      .heroTitleDivider,
-      .heroTitleLower,
-      .heroTitleAddress {
+      .titleUpper,
+      .titleDivider,
+      .titleLower,
+      .titleAddress {
         opacity: 1;
         transform: translateY(0);
       }

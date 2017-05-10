@@ -1,6 +1,4 @@
 import React from 'react';
-import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
-import classNames from 'classnames/bind';
 
 import styles from './scrollDown.scss';
 
@@ -8,35 +6,26 @@ export default class ScrollDown extends React.Component  {
   constructor(props) {
     super(props);
 
-    this.state = {hidePrompt: false};
-    this.cx = classNames.bind(styles);
+    this.state = {show: false};
   }
 
   componentDidMount() {
+    this.setState({show: true});
+
     window.addEventListener('scroll', () => this.handleScroll());
   }
 
   handleScroll() {
     this.setState({
-      hidePrompt: window.pageYOffset === 0 ? false : true
+      show: window.pageYOffset === 0 ? true : false
     });
   }
 
   render() {
-    let classNames = this.cx({
-      scrollDown: true,
-      hide: this.state.hidePrompt,
-    });
+    const classNames = `${styles.scrollDown} ${this.state.show ? styles.show : null}`;
 
     return (
-      <CSSTransitionGroup
-        transitionName={styles}
-        transitionAppear={true}
-        transitionAppearTimeout={2400}
-        transitionEnter={false}
-        transitionLeave={false}>
-        <h5 className={classNames}>Scroll Down</h5>
-      </CSSTransitionGroup>
+      <h5 className={classNames}>Scroll Down</h5>
     );
   }
 };

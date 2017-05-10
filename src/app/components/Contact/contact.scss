@@ -5,38 +5,50 @@
     text-align: center;
     width: 100%;
 
-    .contactContent {
+    .content {
       @include centre('both');
       width: 100%;
     }
 
-    .contactTitle {
+    .title {
       margin-bottom: 30px;
       opacity: 0;
 
       transition: opacity .6s;
     }
 
-    .contactSubTitle {
+    .subtitle {
       font-weight: 400;
       margin: 30px 0 15px;
     }
 
-    .contactDetails {
+    .details {
       opacity: 0;
 
       transition: opacity .8s .4s;
     }
 
-    .contactSocial {
+    .socialIcon {
       cursor: pointer;
       width: 35px;
     }
 
     &.show {
-      .contactTitle,
-      .contactDetails {
+      .title,
+      .details {
         opacity: 1;
+      }
+    }
+  }
+
+  @media screen and (max-width: 736px) and (orientation: landscape) {
+    .contact {
+      .title {
+        margin-bottom: 10px;
+      }
+
+      .subtitle {
+        margin: 10px 0;
       }
     }
   }

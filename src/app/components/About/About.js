@@ -8,17 +8,17 @@ const About = ({reveal}) => {
 
   return (
     <div className={classNames}>
-      <h6 className={styles.aboutTitle}>About</h6>
-      <p className={styles.aboutP}>
+      <h6 className={styles.title}>About</h6>
+      <p className={styles.copy}>
         Will is an award-winning Barber based in Wolverhampton.
       </p>
-      <p className={styles.aboutP}>
+      <p className={styles.copy}>
         He is dedicated to providing an exemplary service to his customers
       </p>
-      <p className={styles.aboutP}>
+      <p className={styles.copy}>
         Please contact Will for appointments.
       </p>
-      <img src={url} className={styles.aboutImage}/>
+      <img src={url} className={styles.image}/>
     </div>
   );
 };
