@@ -9,9 +9,9 @@ import SectionAbout from './sections/SectionAbout/SectionAbout';
 const Main = () => {
   return (
     <SectionAnimate triggerOffset='40'>
-      <SectionOne key='0' />
-      <SectionAbout key='1' />
-      <SectionContact key='2' />
+      <SectionOne />
+      <SectionAbout />
+      <SectionContact />
     </SectionAnimate>
   );
 };
