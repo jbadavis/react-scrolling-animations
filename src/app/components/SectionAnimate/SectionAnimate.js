@@ -14,16 +14,17 @@ export default class SectionAnimate extends React.Component {
   }
 
   componentDidMount() {
-    this.getSections();
-    
-    this.initPos();
-    this.getPos();
-
-    this.setState({positions: this.pos});
-
-    this.checkReveal();
+    this.init();
 
     window.addEventListener('scroll', () => this.handleScroll());
+  }
+
+  init() {
+    this.getSections();
+    this.initPos();
+    this.getPos();
+    this.setState({positions: this.pos});
+    this.checkReveal();
   }
 
   getSections() {
@@ -42,8 +43,8 @@ export default class SectionAnimate extends React.Component {
   }
 
   checkReveal() {
-    let offset = (window.innerHeight / 100) * this.props.triggerOffset;
-    let trigger = window.innerHeight - offset;
+    const offset = (window.innerHeight / 100) * this.props.triggerOffset;
+    const trigger = window.innerHeight - offset;
 
     for (let i in this.pos) {
       if (this.pos[i].top <= trigger && this.pos[i].reveal === false) {
@@ -61,7 +62,7 @@ export default class SectionAnimate extends React.Component {
   render() {
     const children = React.Children.map(this.props.children,
       child => {
-        let hasKey = this.state.positions.hasOwnProperty(child.key);
+        const hasKey = this.state.positions.hasOwnProperty(child.key);
 
         return React.cloneElement(child, {
           reveal: hasKey ? this.state.positions[child.key].reveal : false
