@@ -69,9 +69,7 @@ export default class SectionAnimate extends React.Component {
       }
     );
 
-    return (
-      <div>{children}</div>
-    );
+    return <div>{children}</div>;
   }
 
 }
