@@ -10,7 +10,7 @@ export default class ScrollDown extends React.Component  {
   }
 
   componentDidMount() {
-    this.setState({show: true});
+    setTimeout(() => this.setState({show: true}), 2000);
 
     window.addEventListener('scroll', () => this.handleScroll());
   }

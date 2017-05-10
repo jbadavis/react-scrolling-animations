@@ -6,8 +6,8 @@
     bottom: 80px;
 
     opacity: 0;
-    transition: opacity 1s 1.8s,
-                transform 1s 1.8s;
+    transition: opacity 1s,
+                transform 1s;
     &::after {
       @include centre('horizontal');
       border-left: 1px solid $black-1;
@@ -17,8 +17,8 @@
       opacity: 0;
       transform: translateY(10px);
 
-      transition: opacity .6s 2s ease-out,
-                  transform .6s 2s ease-out;
+      transition: opacity .6s .2s ease-out,
+                  transform .6s .2s ease-out;
     }
 
     &.show {
