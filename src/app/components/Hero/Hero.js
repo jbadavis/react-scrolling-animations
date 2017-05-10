@@ -1,23 +1,17 @@
 import React from 'react';
-import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 import styles from './hero.scss';
 
-const Hero = ({ children }) => {
+const Hero = ({reveal}) => {
+  const classNames = `${styles.hero} ${reveal ? styles.show : null}`;
+
   return (
-    <div className={styles.hero}>
+    <div className={classNames}>
       <div className={styles.heroContent}>
-        <CSSTransitionGroup
-          transitionName={styles}
-          transitionAppear={true}
-          transitionAppearTimeout={2400}
-          transitionEnter={false}
-          transitionLeave={false}>
-          <h1 className={styles.heroTitleUpper}>Will</h1>
-          <h4 className={styles.heroTitleDivider}>at</h4>
-          <h2 className={styles.heroTitleLower}>GI's</h2>
-          <h3 className={styles.heroTitleAddress}>45 Chapel Ash</h3>
-        </CSSTransitionGroup>
+        <h1 className={styles.heroTitleUpper}>Will</h1>
+        <h4 className={styles.heroTitleDivider}>at</h4>
+        <h2 className={styles.heroTitleLower}>GI's</h2>
+        <h3 className={styles.heroTitleAddress}>45 Chapel Ash</h3>
       </div>
     </div>
   );

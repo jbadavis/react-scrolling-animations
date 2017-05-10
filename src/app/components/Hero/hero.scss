@@ -5,66 +5,74 @@
     height: 100%;
     position: relative;
     width: 100%;
-  }
 
-  .heroContent {
-    @include centre('both');
-    text-align: center;
-    width: 100%;
-  }
-
-  .heroTitleDivider {
-    margin: 0 auto 5px;
-    position: relative;
-    width: 160px;
-
-    &::before,
-    &::after {
-      @include centre("vertical");
-      content: "";
-      border-top: 1px solid $black-1;
-      width: 45px;
+    .heroContent {
+      @include centre('both');
+      text-align: center;
+      width: 100%;
     }
 
-    &::before {
-      left: 5px;
+    .heroTitleDivider {
+      margin: 0 auto 5px;
+      position: relative;
+      width: 160px;
+
+      &::before,
+      &::after {
+        @include centre("vertical");
+        content: "";
+        border-top: 1px solid $black-1;
+        width: 45px;
+      }
+
+      &::before {
+        left: 5px;
+      }
+
+      &::after {
+        right: 5px;
+      }
     }
 
-    &::after {
-      right: 5px;
+    .heroTitleLower {
+      margin-bottom: 9px;
     }
-  }
 
-  .heroTitleLower {
-    margin-bottom: 9px;
-  }
+    .heroTitleUpper,
+    .heroTitleDivider,
+    .heroTitleLower,
+    .heroTitleAddress {
+      opacity: 0;
+    }
 
-  .appear {
-    opacity: 0.01;
-
-    &.heroTitleUpper {
+    .heroTitleUpper {
       transform: translateY(10px);
       transition: opacity 1.2s ease-out,
                   transform .6s ease-out;
     }
 
-    &.heroTitleDivider {
+    .heroTitleDivider {
       transition: opacity .6s .6s ease-out;
     }
 
-    &.heroTitleLower {
+    .heroTitleLower {
       transform: translateY(3px);
       transition: opacity 1.2s 1s ease-out,
                   transform 1.2s 1s ease-out;
     }
 
-    &.heroTitleAddress {
+    .heroTitleAddress {
       transition: opacity 1.2s 1.4s ease-out;
     }
 
-    &.appearActive {
-      opacity: 1;
-      transform: translateY(0);
+    &.show {
+      .heroTitleUpper,
+      .heroTitleDivider,
+      .heroTitleLower,
+      .heroTitleAddress {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   }
 }

@@ -9,9 +9,15 @@ const About = ({reveal}) => {
   return (
     <div className={classNames}>
       <h6 className={styles.aboutTitle}>About</h6>
-      <p className={styles.aboutP}>Will is an award-winning Barber based in Wolverhampton.</p>
-      <p className={styles.aboutP}>He is dedicated to providing an exemplary service to his customers</p>
-      <p className={styles.aboutP}>Please contact Will for appointments.</p>
+      <p className={styles.aboutP}>
+        Will is an award-winning Barber based in Wolverhampton.
+      </p>
+      <p className={styles.aboutP}>
+        He is dedicated to providing an exemplary service to his customers
+      </p>
+      <p className={styles.aboutP}>
+        Please contact Will for appointments.
+      </p>
       <img src={url} className={styles.aboutImage}/>
     </div>
   );
