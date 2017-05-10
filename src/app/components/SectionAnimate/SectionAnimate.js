@@ -8,11 +8,14 @@ export default class SectionAnimate extends React.Component {
 
     this.pos = {};
     this.sections = [];
-    this.state = {positions: {}};
+    this.state = {
+      positions: {}
+    };
   }
 
   componentDidMount() {
     this.getSections();
+    
     this.initPos();
     this.getPos();
 
@@ -39,7 +42,8 @@ export default class SectionAnimate extends React.Component {
   }
 
   checkReveal() {
-    let trigger = window.innerHeight - this.props.triggerOffset;
+    let offset = (window.innerHeight / 100) * this.props.triggerOffset;
+    let trigger = window.innerHeight - offset;
 
     for (let i in this.pos) {
       if (this.pos[i].top <= trigger && this.pos[i].reveal === false) {
