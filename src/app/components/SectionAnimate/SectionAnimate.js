@@ -60,8 +60,7 @@ export default class SectionAnimate extends React.Component {
   }
 
   render() {
-    const children = React.Children.map(this.props.children,
-      (child, i) => {
+    const children = React.Children.map(this.props.children, (child, i) => {
         const hasKey = this.state.positions.hasOwnProperty(i);
 
         return React.cloneElement(child, {
