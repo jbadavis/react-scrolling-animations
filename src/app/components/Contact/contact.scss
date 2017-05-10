@@ -4,24 +4,40 @@
   .contact {
     text-align: center;
     width: 100%;
-  }
 
-  .contactContent {
-    @include centre('both');
-    width: 100%;
-  }
+    .contactContent {
+      @include centre('both');
+      width: 100%;
+    }
 
-  .contactTitle {
-    margin-bottom: 30px;
-  }
+    .contactTitle {
+      margin-bottom: 30px;
+      opacity: 0;
 
-  .contactSubTitle {
-    font-weight: 400;
-    margin: 30px 0 15px;
-  }
+      transition: opacity .6s;
+    }
 
-  .contactSocial {
-    cursor: pointer;
-    width: 45px;
+    .contactSubTitle {
+      font-weight: 400;
+      margin: 30px 0 15px;
+    }
+
+    .contactDetails {
+      opacity: 0;
+
+      transition: opacity .8s .4s;
+    }
+
+    .contactSocial {
+      cursor: pointer;
+      width: 35px;
+    }
+
+    &.show {
+      .contactTitle,
+      .contactDetails {
+        opacity: 1;
+      }
+    }
   }
 }

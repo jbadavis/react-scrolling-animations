@@ -5,24 +5,44 @@
     @include centre('both');
     width: 100%;
     text-align: center;
-  }
 
-  .aboutTitle {
-    margin-bottom: 30px;
-  }
+    .aboutTitle {
+      margin-bottom: 30px;
+      opacity: 0;
 
-  .aboutP {
-    margin: 0 auto 10px;
-    width: 90%;
-  }
+      transition: opacity .6s ease-in;
+    }
 
-  .aboutImage {
-    border: 10px;
-    border-color: $black-1;
-    border-style: solid;
-    margin-top: 20px;
-    max-width: 400px;
-    width: 60%;
+    .aboutP {
+      margin: 0 auto 10px;
+      opacity: 0;
+      width: 90%;
+
+      transition: opacity .6s .2s ease-in;
+    }
+
+    .aboutImage {
+      border: 10px;
+      border-color: $black-1;
+      border-style: solid;
+      margin-top: 20px;
+      max-width: 400px;
+      opacity: 0;
+      transform: translateY(5px);
+      width: 60%;
+
+      transition: opacity .4s .4s ease-in,
+                  transform .4s .4s ease-in;
+    }
+
+    &.show {
+      .aboutTitle,
+      .aboutP,
+      .aboutImage {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   }
 
   @media screen and (max-width: 736px) and (orientation: landscape) {

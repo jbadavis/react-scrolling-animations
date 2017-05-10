@@ -3,10 +3,12 @@ import React from 'react';
 import Section from '../../components/Section/Section';
 import About from '../../components/About/About';
 
-const SectionAbout = () => {
+import styles from './sectionAbout.scss';
+
+const SectionAbout = ({reveal}) => {
   return (
-    <Section background='#F0EEE9' colour=''>
-      <About />
+    <Section className={styles.about}>
+      <About reveal={reveal}/>
     </Section>
   );
 };

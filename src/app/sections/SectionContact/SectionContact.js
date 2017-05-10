@@ -3,10 +3,12 @@ import React from 'react';
 import Section from '../../components/Section/Section';
 import Contact from '../../components/Contact/Contact';
 
-const SectionContact = () => {
+import styles from './sectionContact.scss';
+
+const SectionContact = ({reveal}) => {
   return (
-    <Section border='true'>
-      <Contact />
+    <Section className={styles.sectionContact} border='true'>
+      <Contact reveal={reveal} />
     </Section>
   );
 };
