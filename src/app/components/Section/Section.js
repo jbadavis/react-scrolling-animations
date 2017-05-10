@@ -5,20 +5,15 @@ import styles from './section.scss';
 
 const cx = classNames.bind(styles);
 
-const Section = ({ background, border, colour, children }) => {
-  let style = {
-    background: background,
-    color: colour
-  };
-
-  let classNames = cx({
+const Section = (props) => {
+  const classNames = cx({
     section: true,
-    border: border
+    border: props.border,
   });
 
   return (
-    <div className={classNames} style={style} >
-      {children}
+    <div className={`${classNames} ${props.className}`}>
+      {props.children}
     </div>
   );
 };

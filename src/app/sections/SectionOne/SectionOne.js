@@ -4,10 +4,12 @@ import Section from '../../components/Section/Section';
 import Hero from '../../components/Hero/Hero';
 import ScrollDown from '../../components/ScrollDown/ScrollDown';
 
-const SectionOne = () => {
+import styles from './sectionOne.scss';
+
+const SectionOne = ({reveal}) => {
   return (
-    <Section background='#91A8D0' border='true'>
-      <Hero />
+    <Section className={styles.sectionOne} border='true' >
+      <Hero reveal={reveal}/>
       <ScrollDown />
     </Section>
   );

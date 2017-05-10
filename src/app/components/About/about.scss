@@ -3,8 +3,11 @@
 :local {
   .about {
     @include centre('both');
+    opacity: 0;
     width: 100%;
     text-align: center;
+
+    transition: opacity 1s;
   }
 
   .aboutTitle {
@@ -23,6 +26,10 @@
     margin-top: 20px;
     max-width: 400px;
     width: 60%;
+  }
+
+  .show {
+    opacity: 1;
   }
 
   @media screen and (max-width: 736px) and (orientation: landscape) {
