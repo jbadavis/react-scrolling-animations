@@ -6,10 +6,10 @@ import ScrollDown from '../../components/ScrollDown/ScrollDown';
 
 import styles from './sectionOne.scss';
 
-const SectionOne = ({reveal}) => {
+const SectionOne = () => {
   return (
     <Section className={styles.sectionOne} border='true' >
-      <Hero reveal={reveal}/>
+      <Hero />
       <ScrollDown />
     </Section>
   );
