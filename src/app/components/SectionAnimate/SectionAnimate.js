@@ -23,7 +23,6 @@ export default class SectionAnimate extends React.Component {
     this.checkReveal();
 
     window.addEventListener('scroll', () => this.handleScroll());
-
   }
 
   getSections() {
@@ -31,7 +30,7 @@ export default class SectionAnimate extends React.Component {
   }
 
   initPos() {
-    this.sections.forEach((s, i) => this.pos.push({ reveal: false }));
+    this.sections.forEach((s, i) => this.pos.push({reveal: false}));
   }
 
   getPos() {
@@ -57,8 +56,16 @@ export default class SectionAnimate extends React.Component {
   }
 
   render() {
+    const children = React.Children.map(this.props.children, (child, i) => {
+      const hasKey = this.props.sections.length > 1;
+
+      return React.cloneElement(child, {
+        reveal: hasKey ? this.props.sections[i].reveal : false
+      });
+    });
+
     return (
-      <div>{this.props.children}</div>
+      <div>{children}</div>
     );
   }
 };

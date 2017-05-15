@@ -7,10 +7,10 @@ import ScrollIndicator from '../../containers/ScrollIndicator';
 
 import styles from './sectionOne.scss';
 
-const SectionOne = () => {
+const SectionOne = ({ reveal }) => {
   return (
     <Section className={styles.sectionOne} border='true' >
-      <Hero />
+      <Hero reveal={reveal} />
       <ScrollIndicator />
     </Section>
   );

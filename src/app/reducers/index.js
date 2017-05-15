@@ -18,9 +18,9 @@ const animationApp = (state = initialState, action) => {
     case ANIMATE_SECTION:
       return Object.assign({}, state, {
         sections: state.sections.map((section, index) => {
-          if (action.index === index) {
+          if (Number(action.index) === index) {
             return {
-              top: state.sections[i].top,
+              top: state.sections[index].top,
               reveal: true
             };
           }
