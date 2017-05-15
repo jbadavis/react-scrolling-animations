@@ -1,18 +1,18 @@
 import React from 'react';
 
-import VisibleSections from './containers/VisibleSections';
+import SectionAnimateContainer from './containers/SectionAnimateContainer';
 
 import SectionOne from './sections/SectionOne/SectionOne';
 import SectionContact from './sections/SectionContact/SectionContact';
 import SectionAbout from './sections/SectionAbout/SectionAbout';
 
-const Main = () => {
+const Main = (props) => {
   return (
-    <VisibleSections triggerOffset='40'>
+    <SectionAnimateContainer triggerOffset='40'>
       <SectionOne />
       <SectionAbout />
       <SectionContact />
-    </VisibleSections>
+    </SectionAnimateContainer>
   );
 };
 

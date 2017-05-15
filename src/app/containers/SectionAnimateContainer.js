@@ -21,9 +21,9 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-const VisibleSections = connect(
+const SectionAnimateContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(SectionAnimate);
 
-export default VisibleSections;
+export default SectionAnimateContainer;

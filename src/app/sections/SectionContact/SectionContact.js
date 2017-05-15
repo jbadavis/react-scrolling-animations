@@ -1,6 +1,7 @@
 import React from 'react';
 
-import Section from '../../components/Section/Section';
+import Section from '../../containers/SectionContainer';
+
 import Contact from '../../components/Contact/Contact';
 
 import styles from './sectionContact.scss';

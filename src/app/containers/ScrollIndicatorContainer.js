@@ -18,9 +18,9 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-const ScrollIndicator = connect(
+const ScrollIndicatorContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(ScrollDown);
 
-export default ScrollIndicator;
+export default ScrollIndicatorContainer;

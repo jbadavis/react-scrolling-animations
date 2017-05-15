@@ -3,7 +3,7 @@ import React from 'react';
 import Section from '../../components/Section/Section';
 import Hero from '../../components/Hero/Hero';
 
-import ScrollIndicator from '../../containers/ScrollIndicator';
+import ScrollIndicatorContainer from '../../containers/ScrollIndicatorContainer';
 
 import styles from './sectionOne.scss';
 
@@ -11,7 +11,7 @@ const SectionOne = ({ reveal }) => {
   return (
     <Section className={styles.sectionOne} border='true' >
       <Hero reveal={reveal} />
-      <ScrollIndicator />
+      <ScrollIndicatorContainer />
     </Section>
   );
 };
