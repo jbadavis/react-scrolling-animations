@@ -5,24 +5,20 @@ import styles from './scrollDown.scss';
 export default class ScrollDown extends React.Component  {
   constructor(props) {
     super(props);
-
-    this.state = {show: false};
   }
 
   componentDidMount() {
-    setTimeout(() => this.setState({show: true}), 2000);
+    setTimeout(() => this.props.setScrollIndicator(true), 2000);
 
     window.addEventListener('scroll', () => this.handleScroll());
   }
 
   handleScroll() {
-    this.setState({
-      show: window.pageYOffset === 0 ? true : false
-    });
+    this.props.setScrollIndicator(window.pageYOffset === 0 ? true : false);
   }
 
   render() {
-    const classNames = `${styles.scrollDown} ${this.state.show ? styles.show : null}`;
+    const classNames = `${styles.scrollDown} ${this.props.showScrollIndicator ? styles.show : null}`;
 
     return (
       <h5 className={classNames}>Scroll Down</h5>

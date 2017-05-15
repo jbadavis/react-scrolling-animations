@@ -1,20 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { setSectionPositions } from '../actions';
+import { setSectionPositions, animateSection } from '../actions';
 
 import SectionAnimate from '../components/SectionAnimate/SectionAnimate';
-import styles from '../components/Section/section.scss';
 
 const mapStateToProps = (state) => {
   return {
-    positions: state.positions
+    sections: state.sections
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    setSectionPositions: (positions) => {
-      dispatch(setSectionPositions(positions));
+    setSectionPositions: (sections) => {
+      dispatch(setSectionPositions(sections));
+    },
+    animateSection: (index) => {
+      dispatch(animateSection(index));
     }
   };
 };

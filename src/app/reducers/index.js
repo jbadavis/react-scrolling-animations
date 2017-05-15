@@ -1,14 +1,31 @@
-import { SET_POSITIONS } from '../actions';
+import { SET_POSITIONS, SET_SCROLL_INDICATOR, ANIMATE_SECTION } from '../actions';
 
 const initialState = {
-  positions: {},
+  sections: [],
+  showScrollIndicator: false
 };
 
 const animationApp = (state = initialState, action) => {
   switch (action.type) {
     case SET_POSITIONS:
       return Object.assign({}, state, {
-        positions: Object.assign(state.positions, action.positions)
+        sections: Object.assign(state.sections, action.sections)
+      });
+    case SET_SCROLL_INDICATOR:
+      return Object.assign({}, state, {
+        showScrollIndicator: action.showHide
+      });
+    case ANIMATE_SECTION:
+      return Object.assign({}, state, {
+        sections: state.sections.map((section, index) => {
+          if (action.index === index) {
+            return {
+              top: state.sections[i].top,
+              reveal: true
+            };
+          }
+          return section;
+        })
       });
     default:
       return state;

@@ -2,7 +2,8 @@ import React from 'react';
 
 import Section from '../../components/Section/Section';
 import Hero from '../../components/Hero/Hero';
-import ScrollDown from '../../components/ScrollDown/ScrollDown';
+
+import ScrollIndicator from '../../containers/ScrollIndicator';
 
 import styles from './sectionOne.scss';
 
@@ -10,7 +11,7 @@ const SectionOne = () => {
   return (
     <Section className={styles.sectionOne} border='true' >
       <Hero />
-      <ScrollDown />
+      <ScrollIndicator />
     </Section>
   );
 };

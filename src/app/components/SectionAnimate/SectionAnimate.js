@@ -6,7 +6,7 @@ export default class SectionAnimate extends React.Component {
   constructor(props) {
     super(props);
 
-    this.pos = {};
+    this.pos = [];
   }
 
   componentDidMount() {
@@ -21,6 +21,9 @@ export default class SectionAnimate extends React.Component {
     this.props.setSectionPositions(this.pos);
 
     this.checkReveal();
+
+    window.addEventListener('scroll', () => this.handleScroll());
+
   }
 
   getSections() {
@@ -28,10 +31,7 @@ export default class SectionAnimate extends React.Component {
   }
 
   initPos() {
-    this.sections.forEach((s, i) => {
-      this.pos[i] = {};
-      this.pos[i].reveal = false;
-    });
+    this.sections.forEach((s, i) => this.pos.push({ reveal: false }));
   }
 
   getPos() {
@@ -42,10 +42,11 @@ export default class SectionAnimate extends React.Component {
     const offset = (window.innerHeight / 100) * this.props.triggerOffset;
     const trigger = window.innerHeight - offset;
 
-    for (let i in this.props.positions) {
-      if (this.pos[i].top <= trigger && this.pos[i].reveal === false) {
-        this.pos[i].reveal = true;
-        this.props.setSectionPositions(this.pos);
+    for (let i in this.props.sections) {
+      let section = this.props.sections[i];
+
+      if (section.top <= trigger && section.reveal === false) {
+        this.props.animateSection(i);
       }
     }
   }
