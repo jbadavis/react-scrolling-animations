@@ -1,18 +1,18 @@
 import React from 'react';
 
-import SectionAnimateContainer from './containers/SectionAnimateContainer';
+import SectionAnimate from './containers/SectionAnimate/SectionAnimate';
 
-import SectionOne from './sections/SectionOne/SectionOne';
-import SectionContact from './sections/SectionContact/SectionContact';
-import SectionAbout from './sections/SectionAbout/SectionAbout';
+import SectionOne from './containers/SectionOne/SectionOne';
+import SectionAbout from './containers/SectionAbout/SectionAbout';
+import SectionContact from './containers/SectionContact/SectionContact';
 
 const Main = (props) => {
   return (
-    <SectionAnimateContainer triggerOffset='40'>
-      <SectionOne />
-      <SectionAbout />
-      <SectionContact />
-    </SectionAnimateContainer>
+    <SectionAnimate triggerOffset='40'>
+      <SectionOne index='0'/>
+      <SectionAbout index='1'/>
+      <SectionContact index='2'/>
+    </SectionAnimate>
   );
 };
 

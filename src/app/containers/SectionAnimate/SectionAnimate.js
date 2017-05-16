@@ -1,8 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { setSectionPositions, animateSection } from '../../actions';
 
-import styles from '../Section/section.scss';
+import styles from '../../components/Section/section.scss';
 
-export default class SectionAnimate extends React.Component {
+class SectionAnimate extends React.Component {
   constructor(props) {
     super(props);
 
@@ -56,16 +58,25 @@ export default class SectionAnimate extends React.Component {
   }
 
   render() {
-    const children = React.Children.map(this.props.children, (child, i) => {
-      const hasKey = this.props.sections.length > 1;
-
-      return React.cloneElement(child, {
-        reveal: hasKey ? this.props.sections[i].reveal : false
-      });
-    });
-
-    return (
-      <div>{children}</div>
-    );
+    return <div>{this.props.children}</div>;
   }
 };
+
+const mapStateToProps = (state) => {
+  return {
+    sections: state.sections
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setSectionPositions: (sections) => {
+      dispatch(setSectionPositions(sections));
+    },
+    animateSection: (index) => {
+      dispatch(animateSection(index));
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SectionAnimate);

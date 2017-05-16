@@ -9,7 +9,7 @@ const animationApp = (state = initialState, action) => {
   switch (action.type) {
     case SET_POSITIONS:
       return Object.assign({}, state, {
-        sections: Object.assign(state.sections, action.sections)
+        sections: action.sections
       });
     case SET_SCROLL_INDICATOR:
       return Object.assign({}, state, {
