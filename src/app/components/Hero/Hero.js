@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './hero.scss';
 
 const Hero = ({ reveal }) => {
-  const classNames = `${styles.hero} ${reveal ? styles.show : null}`;
+  const classNames = `${styles.hero} ${reveal ? styles.show : ''}`;
 
   return (
     <div className={classNames}>

@@ -5,7 +5,7 @@ import styles from './contact.scss';
 import url from '../../../img/instagram.svg';
 
 const Contact = ({ reveal }) => {
-  const classNames = `${styles.contact} ${reveal ? styles.show : null}`;
+  const classNames = `${styles.contact} ${reveal ? styles.show : ''}`;
 
   return (
     <div className={classNames}>

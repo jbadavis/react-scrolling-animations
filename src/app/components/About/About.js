@@ -5,7 +5,7 @@ import styles from './about.scss';
 import url from '../../../img/will-headshot.jpg';
 
 const About = ({ reveal }) => {
-  const classNames = `${styles.about} ${reveal ? styles.show : null}`;
+  const classNames = `${styles.about} ${reveal ? styles.show : ''}`;
 
   return (
     <div className={classNames}>
