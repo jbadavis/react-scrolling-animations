@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 
 import styles from './section.scss';
@@ -16,6 +17,11 @@ const Section = (props) => {
       {props.children}
     </div>
   );
+};
+
+Section.propTypes = {
+  border: PropTypes.bool,
+  className: PropTypes.string
 };
 
 export default Section;

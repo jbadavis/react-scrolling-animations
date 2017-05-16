@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import Section from '../../components/Section/Section';
@@ -16,7 +17,7 @@ class SectionContact extends React.Component {
     const reveal = section !== undefined ? section.reveal : null;
 
     return (
-      <Section className={styles.contact} border='true' >
+      <Section className={styles.contact} border={true} >
         <Contact reveal={reveal} />
       </Section>
     );
@@ -27,6 +28,10 @@ const mapStateToProps = (state) => {
   return {
     sections: state.sections
   };
+};
+
+SectionContact.propTypes = {
+  sections: PropTypes.array
 };
 
 export default connect(mapStateToProps)(SectionContact);

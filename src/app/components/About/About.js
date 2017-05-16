@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './about.scss';
 import url from '../../../img/will-headshot.jpg';
 
-const About = ({reveal}) => {
+const About = ({ reveal }) => {
   const classNames = `${styles.about} ${reveal ? styles.show : null}`;
 
   return (
@@ -21,6 +22,10 @@ const About = ({reveal}) => {
       <img src={url} className={styles.image}/>
     </div>
   );
+};
+
+About.propTypes = {
+  reveal: PropTypes.bool
 };
 
 export default About;

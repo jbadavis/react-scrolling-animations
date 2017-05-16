@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setScrollIndicator } from '../../actions';
 
@@ -30,7 +31,7 @@ class SectionOne extends React.Component {
     const scrollClasses = `${styles.scrollDown} ${showIndicator ? styles.show : null}`;
 
     return (
-      <Section className={styles.sectionOne} border='true' >
+      <Section className={styles.sectionOne} border={true} >
         <Hero reveal={reveal} />
         <h5 className={scrollClasses}>Scroll Down</h5>
       </Section>
@@ -51,6 +52,11 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(setScrollIndicator(showHide));
     }
   };
+};
+
+SectionOne.propTypes = {
+  showScrollIndicator: PropTypes.bool,
+  sections: PropTypes.array
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SectionOne);

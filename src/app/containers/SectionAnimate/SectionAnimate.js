@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setSectionPositions, animateSection } from '../../actions';
 
@@ -79,6 +80,11 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(animateSection(index));
     }
   };
+};
+
+SectionAnimate.propTypes = {
+  sections: PropTypes.array,
+  triggerOffset: PropTypes.number
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SectionAnimate);

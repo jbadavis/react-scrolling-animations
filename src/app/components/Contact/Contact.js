@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './contact.scss';
 import url from '../../../img/instagram.svg';
 
-const Hero = ({reveal}) => {
+const Contact = ({ reveal }) => {
   const classNames = `${styles.contact} ${reveal ? styles.show : null}`;
 
   return (
@@ -29,4 +30,8 @@ const Hero = ({reveal}) => {
   );
 };
 
-export default Hero;
+Contact.propTypes = {
+  reveal: PropTypes.bool
+};
+
+export default Contact;

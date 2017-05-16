@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import Section from '../../components/Section/Section';
@@ -27,6 +28,10 @@ const mapStateToProps = (state) => {
   return {
     sections: state.sections
   };
+};
+
+SectionAbout.propTypes = {
+  sections: PropTypes.array
 };
 
 export default connect(mapStateToProps)(SectionAbout);
