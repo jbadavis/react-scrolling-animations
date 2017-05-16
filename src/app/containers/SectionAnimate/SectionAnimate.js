@@ -15,14 +15,16 @@ class SectionAnimate extends React.Component {
     this.init();
   }
 
+  componentDidUpdate() {
+    this.checkReveal();
+  }
+
   init() {
     this.getSections();
     this.initPos();
     this.getPos();
 
     this.props.setSectionPositions(this.pos);
-
-    this.checkReveal();
 
     window.addEventListener('scroll', () => this.handleScroll());
   }
