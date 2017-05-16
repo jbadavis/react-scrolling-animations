@@ -56,7 +56,8 @@ const mapDispatchToProps = (dispatch) => {
 
 SectionOne.propTypes = {
   showScrollIndicator: PropTypes.bool,
-  sections: PropTypes.array
+  sections: PropTypes.array,
+  index: PropTypes.number
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SectionOne);
