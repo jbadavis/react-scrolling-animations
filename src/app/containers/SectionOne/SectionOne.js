@@ -20,7 +20,7 @@ class SectionOne extends React.Component {
 
   handleScroll() {
     this.props.setScrollIndicator(window.pageYOffset === 0 ? true : false);
-}
+  }
 
   render() {
     const section = this.props.sections[this.props.index];
