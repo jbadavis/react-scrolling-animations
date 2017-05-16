@@ -1,5 +1,48 @@
+@import "../../../scss/add-ons";
+
 :local {
   .sectionOne {
     background: #91A8D0;
+  }
+
+  .scrollDown {
+    @include centre('horizontal');
+    bottom: 80px;
+
+    opacity: 0;
+    transition: opacity 1s,
+                transform 1s;
+    &::after {
+      @include centre('horizontal');
+      border-left: 1px solid $black-1;
+      bottom: -80px;
+      content: '';
+      height: 65px;
+      opacity: 0;
+      transform: translateY(10px);
+
+      transition: opacity .6s .2s ease-out,
+                  transform .6s .2s ease-out;
+    }
+
+    &.show {
+      opacity: 1;
+
+      &::after {
+        opacity: 1;
+        transform: translate(-50%, 0px);
+      }
+    }
+  }
+
+  @media screen and (min-width: 415px) {
+    .scrollDown {
+      bottom: 30px;
+
+      &::after {
+        bottom: -30px;
+        height: 20px;
+      }
+    }
   }
 }
