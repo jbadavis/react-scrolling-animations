@@ -11,16 +11,6 @@ import styles from './sectionOne.scss';
 class SectionOne extends React.Component {
   constructor(props) {
     super(props);
-
-    window.addEventListener('scroll', () => this.handleScroll());
-  }
-
-  componentDidMount() {
-    setTimeout(() => this.props.setScrollIndicator(true), 100);
-  }
-
-  handleScroll() {
-    this.props.setScrollIndicator(window.pageYOffset === 0 ? true : false);
   }
 
   render() {
@@ -41,23 +31,13 @@ class SectionOne extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    showScrollIndicator: state.showScrollIndicator,
     sections: state.sections
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setScrollIndicator: (showHide) => {
-      dispatch(setScrollIndicator(showHide));
-    }
-  };
-};
-
 SectionOne.propTypes = {
-  showScrollIndicator: PropTypes.bool,
   sections: PropTypes.array,
   index: PropTypes.number
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SectionOne);
+export default connect(mapStateToProps)(SectionOne);
