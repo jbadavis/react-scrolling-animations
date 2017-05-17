@@ -5,7 +5,9 @@
   "main": "",
   "scripts": {
     "start": "webpack-dev-server",
-    "prod": "webpack -p"
+    "prod": "npm run clean && webpack -p --progress --config webpack.config.prod.js",
+    "deploy": "npm run prod && ./aws/deploy.sh",
+    "clean": "rm -r dist || true "
   },
   "author": "jbadavis",
   "license": "ISC",
@@ -19,6 +21,7 @@
     "babel-preset-stage-0": "^6.22.0",
     "babel-register": "^6.18.0",
     "classnames": "^2.2.5",
+    "compression-webpack-plugin": "^0.4.0",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.27.3",
     "ejs": "^2.5.6",
