@@ -1,9 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
 
 import styles from './hero.scss';
 
-const Hero = ({reveal}) => {
-  const classNames = `${styles.hero} ${reveal ? styles.show : null}`;
+const cx = classNames.bind(styles);
+
+const Hero = ({ reveal }) => {
+  const classNames = cx('hero', {show: reveal});
 
   return (
     <div className={classNames}>
@@ -15,6 +19,10 @@ const Hero = ({reveal}) => {
       </div>
     </div>
   );
+};
+
+Hero.propTypes = {
+  reveal: PropTypes.bool
 };
 
 export default Hero;

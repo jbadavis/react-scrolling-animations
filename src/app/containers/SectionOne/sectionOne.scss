@@ -1,6 +1,10 @@
 @import "../../../scss/add-ons";
 
 :local {
+  .sectionOne {
+    background: #91A8D0;
+  }
+
   .scrollDown {
     @include centre('horizontal');
     bottom: 80px;
