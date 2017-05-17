@@ -5,7 +5,9 @@
   "main": "webpack.config.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "prod": "webpack -p"
+    "prod": "npm run clean && webpack -p --progress --config webpack.config.prod.js",
+    "deploy": "npm run prod && ./aws/deploy.sh",
+    "clean": "rm -r dist"
   },
   "author": "",
   "license": "ISC",
@@ -32,6 +34,7 @@
     "babel-preset-stage-0": "^6.22.0",
     "babel-register": "^6.18.0",
     "classnames": "^2.2.5",
+    "compression-webpack-plugin": "^0.4.0",
     "contentful": "^4.1.1",
     "ejs": "^2.5.6",
     "file-loader": "^0.11.1",
