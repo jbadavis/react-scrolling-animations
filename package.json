@@ -7,7 +7,7 @@
     "start": "webpack-dev-server",
     "prod": "npm run clean && webpack -p --progress --config webpack.config.prod.js",
     "deploy": "npm run prod && ./aws/deploy.sh",
-    "clean": "rm -r dist"
+    "clean": "rm -r dist || true "
   },
   "author": "",
   "license": "ISC",
