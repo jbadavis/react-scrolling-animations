@@ -14,7 +14,7 @@ class SectionContact extends React.Component {
 
   render() {
     const section = this.props.sections[this.props.index];
-    const reveal = section !== undefined ? section.reveal : null;
+    const reveal = section !== undefined ? section.reveal : false;
 
     return (
       <Section className={styles.contact} border={true} >

@@ -25,7 +25,7 @@ class SectionOne extends React.Component {
 
   render() {
     const section = this.props.sections[this.props.index];
-    const reveal = section !== undefined ? section.reveal : null;
+    const reveal = section !== undefined ? section.reveal : false;
 
     const showIndicator = this.props.showScrollIndicator;
     const scrollClasses = `${styles.scrollDown} ${showIndicator ? styles.show : null}`;
