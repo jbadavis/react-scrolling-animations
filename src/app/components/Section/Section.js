@@ -7,10 +7,7 @@ import styles from './section.scss';
 const cx = classNames.bind(styles);
 
 const Section = (props) => {
-  const classNames = cx({
-    section: true,
-    border: props.border,
-  });
+  const classNames = cx('section', {border: props.border});
 
   return (
     <div className={`${classNames} ${props.className}`}>

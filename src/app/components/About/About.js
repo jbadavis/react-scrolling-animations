@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
 
 import styles from './about.scss';
 import url from '../../../img/will-headshot.jpg';
 
+const cx = classNames.bind(styles);
+
 const About = ({ reveal }) => {
-  const classNames = `${styles.about} ${reveal ? styles.show : ''}`;
+  const classNames = cx('about', {show: reveal});
 
   return (
     <div className={classNames}>

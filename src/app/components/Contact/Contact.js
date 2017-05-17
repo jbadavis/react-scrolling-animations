@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
 
 import styles from './contact.scss';
 import url from '../../../img/instagram.svg';
 
+const cx = classNames.bind(styles);
+
 const Contact = ({ reveal }) => {
-  const classNames = `${styles.contact} ${reveal ? styles.show : ''}`;
+  const classNames = cx('contact', {show: reveal});
 
   return (
     <div className={classNames}>
