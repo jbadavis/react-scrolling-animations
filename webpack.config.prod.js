@@ -6,15 +6,12 @@ const CompressionPlugin = require('compression-webpack-plugin');
 module.exports = {
   context: path.resolve(__dirname, './src'),
   entry: {
-    app: './app.js',
+    app: './App.js',
   },
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: '[name].bundle.js',
     libraryTarget: 'umd'
-  },
-  devServer: {
-    contentBase: path.resolve(__dirname, './src'),
   },
   module: {
     rules: [
@@ -41,8 +38,7 @@ module.exports = {
         },
         {
           loader: "sass-loader"
-        },
-      ]
+        }]
       },
       {
         test: /\.(jpg|png|svg)$/,
@@ -57,11 +53,11 @@ module.exports = {
       {from: 'index.html'},
       {from: 'img/favicon.ico'}
     ]),
-		new CompressionPlugin({
-			asset: "[path][query]",
-			algorithm: "gzip",
-			threshold: 10240,
-		})
+    new CompressionPlugin({
+      asset: "[path][query]",
+      algorithm: "gzip",
+      threshold: 10240,
+    })
   ],
   resolve: {
     modules: [path.resolve(__dirname, './src'), 'node_modules']
