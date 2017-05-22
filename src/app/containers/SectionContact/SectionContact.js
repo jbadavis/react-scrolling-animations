@@ -26,7 +26,7 @@ const mapStateToProps = (state) => {
 
 SectionContact.propTypes = {
   sections: PropTypes.array,
-  index: PropTypes.number
+  index: PropTypes.number.isRequired
 };
 
 export default connect(mapStateToProps)(SectionContact);

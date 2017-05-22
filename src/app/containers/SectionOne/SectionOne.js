@@ -32,7 +32,7 @@ const mapStateToProps = (state) => {
 
 SectionOne.propTypes = {
   sections: PropTypes.array,
-  index: PropTypes.number,
+  index: PropTypes.number.isRequired,
   showScrollIndicator: PropTypes.bool
 };
 
