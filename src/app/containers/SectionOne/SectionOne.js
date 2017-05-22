@@ -31,13 +31,15 @@ class SectionOne extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    sections: state.sections
+    sections: state.sections,
+    showScrollIndicator: state.showScrollIndicator
   };
 };
 
 SectionOne.propTypes = {
   sections: PropTypes.array,
-  index: PropTypes.number
+  index: PropTypes.number,
+  showScrollIndicator: PropTypes.bool
 };
 
 export default connect(mapStateToProps)(SectionOne);

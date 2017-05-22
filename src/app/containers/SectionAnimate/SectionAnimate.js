@@ -15,7 +15,7 @@ class SectionAnimate extends React.Component {
   componentDidMount() {
     this.init();
 
-    setTimeout(() => this.props.setScrollIndicator(true), 100);
+    setTimeout(() => this.props.setScrollIndicator(true), 1600);
   }
 
   componentDidUpdate() {
