@@ -6,15 +6,12 @@ const CompressionPlugin = require('compression-webpack-plugin');
 module.exports = {
   context: path.resolve(__dirname, './src'),
   entry: {
-    app: './app.js',
+    app: './App.js',
   },
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: '[name].bundle.js',
     libraryTarget: 'umd'
-  },
-  devServer: {
-    contentBase: path.resolve(__dirname, './src'),
   },
   module: {
     rules: [

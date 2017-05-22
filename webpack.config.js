@@ -5,7 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   context: path.resolve(__dirname, './src'),
   entry: {
-    app: './app.js',
+    app: './App.js',
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -14,6 +14,7 @@ module.exports = {
   },
   devServer: {
     contentBase: path.resolve(__dirname, './src'),
+    historyApiFallback: true,
   },
   module: {
     rules: [
