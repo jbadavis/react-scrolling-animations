@@ -8,25 +8,19 @@ import Hero from '../../components/Hero/Hero';
 
 import styles from './sectionOne.scss';
 
-class SectionOne extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+const SectionOne = ({ sections, index, showScrollIndicator }) => {
+  const section = sections[index];
+  const reveal = section !== undefined ? section.reveal : false;
 
-  render() {
-    const section = this.props.sections[this.props.index];
-    const reveal = section !== undefined ? section.reveal : false;
+  const showIndicator = showScrollIndicator;
+  const scrollClasses = `${styles.scrollDown} ${showIndicator ? styles.show : null}`;
 
-    const showIndicator = this.props.showScrollIndicator;
-    const scrollClasses = `${styles.scrollDown} ${showIndicator ? styles.show : null}`;
-
-    return (
-      <Section className={styles.sectionOne} border={true} >
-        <Hero reveal={reveal} />
-        <h5 className={scrollClasses}>Scroll Down</h5>
-      </Section>
-    );
-  }
+  return (
+    <Section className={styles.sectionOne} border={true} >
+      <Hero reveal={reveal} />
+      <h5 className={scrollClasses}>Scroll Down</h5>
+    </Section>
+  );
 };
 
 const mapStateToProps = (state) => {

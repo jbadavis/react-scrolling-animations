@@ -7,22 +7,16 @@ import About from '../../components/About/About';
 
 import styles from './sectionAbout.scss';
 
-class SectionAbout extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+const SectionAbout = ({ sections, index }) => {
+  const section = sections[index];
+  const reveal = section !== undefined ? section.reveal : false;
 
-  render() {
-    const section = this.props.sections[this.props.index];
-    const reveal = section !== undefined ? section.reveal : false;
-
-    return (
-      <Section className={styles.about}>
-        <About reveal={reveal}/>
-      </Section>
-    );
-  }
-}
+  return (
+    <Section className={styles.about}>
+      <About reveal={reveal}/>
+    </Section>
+  );
+};
 
 const mapStateToProps = (state) => {
   return {
@@ -31,7 +25,8 @@ const mapStateToProps = (state) => {
 };
 
 SectionAbout.propTypes = {
-  sections: PropTypes.array
+  sections: PropTypes.array,
+  index: PropTypes.number
 };
 
 export default connect(mapStateToProps)(SectionAbout);

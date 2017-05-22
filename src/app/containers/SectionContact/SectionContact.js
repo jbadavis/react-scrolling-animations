@@ -7,22 +7,16 @@ import Contact from '../../components/Contact/Contact';
 
 import styles from './sectionContact.scss';
 
-class SectionContact extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+const SectionContact = ({ sections, index }) => {
+  const section = sections[index];
+  const reveal = section !== undefined ? section.reveal : false;
 
-  render() {
-    const section = this.props.sections[this.props.index];
-    const reveal = section !== undefined ? section.reveal : false;
-
-    return (
-      <Section className={styles.contact} border={true} >
-        <Contact reveal={reveal} />
-      </Section>
-    );
-  }
-}
+  return (
+    <Section className={styles.contact} border={true} >
+      <Contact reveal={reveal} />
+    </Section>
+  );
+};
 
 const mapStateToProps = (state) => {
   return {
@@ -31,7 +25,8 @@ const mapStateToProps = (state) => {
 };
 
 SectionContact.propTypes = {
-  sections: PropTypes.array
+  sections: PropTypes.array,
+  index: PropTypes.number
 };
 
 export default connect(mapStateToProps)(SectionContact);
