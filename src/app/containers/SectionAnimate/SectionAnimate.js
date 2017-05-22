@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { setSectionPositions, animateSection } from '../../actions';
+import { setSectionPositions, animateSection, setScrollIndicator } from '../../actions';
 
 import styles from '../../components/Section/section.scss';
 
@@ -14,6 +14,8 @@ class SectionAnimate extends React.Component {
 
   componentDidMount() {
     this.init();
+
+    setTimeout(() => this.props.setScrollIndicator(true), 1600);
   }
 
   componentDidUpdate() {
@@ -56,6 +58,8 @@ class SectionAnimate extends React.Component {
   }
 
   handleScroll() {
+    this.props.setScrollIndicator(window.pageYOffset === 0 ? true : false);
+
     this.getPos();
     this.checkReveal();
   }
@@ -67,6 +71,7 @@ class SectionAnimate extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
+    showScrollIndicator: state.showScrollIndicator,
     sections: state.sections
   };
 };
@@ -78,13 +83,17 @@ const mapDispatchToProps = (dispatch) => {
     },
     animateSection: (index) => {
       dispatch(animateSection(index));
+    },
+    setScrollIndicator: (showHide) => {
+      dispatch(setScrollIndicator(showHide));
     }
   };
 };
 
 SectionAnimate.propTypes = {
   sections: PropTypes.array,
-  triggerOffset: PropTypes.number
+  triggerOffset: PropTypes.number,
+  showScrollIndicator: PropTypes.bool
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SectionAnimate);

@@ -8,56 +8,32 @@ import Hero from '../../components/Hero/Hero';
 
 import styles from './sectionOne.scss';
 
-class SectionOne extends React.Component {
-  constructor(props) {
-    super(props);
+const SectionOne = ({ sections, index, showScrollIndicator }) => {
+  const section = sections[index];
+  const reveal = section !== undefined ? section.reveal : false;
 
-    window.addEventListener('scroll', () => this.handleScroll());
-  }
+  const showIndicator = showScrollIndicator;
+  const scrollClasses = `${styles.scrollDown} ${showIndicator ? styles.show : null}`;
 
-  componentDidMount() {
-    setTimeout(() => this.props.setScrollIndicator(true), 100);
-  }
-
-  handleScroll() {
-    this.props.setScrollIndicator(window.pageYOffset === 0 ? true : false);
-  }
-
-  render() {
-    const section = this.props.sections[this.props.index];
-    const reveal = section !== undefined ? section.reveal : false;
-
-    const showIndicator = this.props.showScrollIndicator;
-    const scrollClasses = `${styles.scrollDown} ${showIndicator ? styles.show : null}`;
-
-    return (
-      <Section className={styles.sectionOne} border={true} >
-        <Hero reveal={reveal} />
-        <h5 className={scrollClasses}>Scroll Down</h5>
-      </Section>
-    );
-  }
+  return (
+    <Section className={styles.sectionOne} border={true} >
+      <Hero reveal={reveal} />
+      <h5 className={scrollClasses}>Scroll Down</h5>
+    </Section>
+  );
 };
 
 const mapStateToProps = (state) => {
   return {
-    showScrollIndicator: state.showScrollIndicator,
-    sections: state.sections
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setScrollIndicator: (showHide) => {
-      dispatch(setScrollIndicator(showHide));
-    }
+    sections: state.sections,
+    showScrollIndicator: state.showScrollIndicator
   };
 };
 
 SectionOne.propTypes = {
-  showScrollIndicator: PropTypes.bool,
   sections: PropTypes.array,
-  index: PropTypes.number
+  index: PropTypes.number.isRequired,
+  showScrollIndicator: PropTypes.bool
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SectionOne);
+export default connect(mapStateToProps)(SectionOne);
