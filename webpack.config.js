@@ -13,8 +13,7 @@ module.exports = {
     libraryTarget: 'umd'
   },
   devServer: {
-    contentBase: path.resolve(__dirname, './src'),
-    historyApiFallback: true,
+    contentBase: path.resolve(__dirname, './src')
   },
   module: {
     rules: [
@@ -53,8 +52,8 @@ module.exports = {
   },
   plugins: [
     new CopyWebpackPlugin([
-      {from: 'index.html'},
-      {from: 'img/favicon.ico'}
+      { from: 'index.html' },
+      { from: 'img/favicon.ico' }
     ])
   ],
   resolve: {

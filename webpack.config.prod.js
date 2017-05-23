@@ -50,8 +50,8 @@ module.exports = {
   },
   plugins: [
     new CopyWebpackPlugin([
-      {from: 'index.html'},
-      {from: 'img/favicon.ico'}
+      { from: 'index.html' },
+      { from: 'img/favicon.ico' }
     ]),
     new CompressionPlugin({
       asset: "[path][query]",

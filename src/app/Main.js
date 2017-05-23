@@ -1,18 +1,21 @@
 import React from 'react';
+import { Router, Route, HashRouter, Switch } from 'react-router-dom';
 
-import SectionAnimate from './containers/SectionAnimate/SectionAnimate';
-
-import SectionOne from './containers/SectionOne/SectionOne';
-import SectionAbout from './containers/SectionAbout/SectionAbout';
-import SectionContact from './containers/SectionContact/SectionContact';
+import Home from './pages/Home/Home';
+import Work from './pages/Work/Work';
+import Header from './components/Header/Header';
 
 const Main = (props) => {
   return (
-    <SectionAnimate triggerOffset={40}>
-      <SectionOne index={0}/>
-      <SectionAbout index={1}/>
-      <SectionContact index={2}/>
-    </SectionAnimate>
+    <div>
+      <HashRouter>
+        <switch>
+          <Header />
+          <Route exact path='/' component={ Home } />
+          <Route path='/work' component={ Work }/>
+        </switch>
+      </HashRouter>
+    </div>
   );
 };
 
